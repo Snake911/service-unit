@@ -161,6 +161,36 @@ button[class^="owl"] {
     transform: scale(.5) rotate(180deg);
 }
 
+.tab_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 38px;
+    row-gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.tab_buttons button {
+    border-radius: 0;
+    padding: 10px 15px;
+    color: var(--color-gray);
+    border: 1px solid;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.tab_buttons button.active {
+    background-color: var(--color-blue);
+    border-color: var(--color-blue);
+    color: #fff;
+}
+
+.tab_buttons button:not(.active) {
+    cursor: pointer;
+}
+
 
 /* Header */
 
