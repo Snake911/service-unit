@@ -56,5 +56,12 @@ $(document).ready(function() {
                 items: 3
             }
         },
-    })
+    });
+
+    // Переключение табов в блоке Продукты на главной
+    $('.tab_buttons button').click(function() {
+        console.log($(this))
+        $(this).closest('.tabs').find("[data-tab]").removeClass('active');
+        $(this).closest('.tabs').find(`[data-tab="${$(this).data('tab')}"]`).addClass('active');
+    });
 });
