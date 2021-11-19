@@ -9,7 +9,7 @@ $(document).ready(function() {
         $(this).toggleClass('active');
     });
 
-    /* Èíèöèàëèçàöèÿ ñëàéäåðîâ */
+    /* Ð˜Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ ÑÐ»Ð°Ð¹Ð´ÐµÑ€Ð¾Ð² */
     function carouselInitialized() {
         const percent = 100 / $('.banner_slider-switch').data('count');
         $('.banner_slider-switch .after').css("width", `${percent}%`);
@@ -58,10 +58,55 @@ $(document).ready(function() {
         },
     });
 
-    // Ïåðåêëþ÷åíèå òàáîâ â áëîêå Ïðîäóêòû íà ãëàâíîé
+    // ÐŸÐµÑ€ÐµÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ Ñ‚Ð°Ð±Ð¾Ð² Ð² Ð±Ð»Ð¾ÐºÐµ ÐŸÑ€Ð¾Ð´ÑƒÐºÑ‚Ñ‹ Ð½Ð° Ð³Ð»Ð°Ð²Ð½Ð¾Ð¹
     $('.tab_buttons button').click(function() {
         console.log($(this))
         $(this).closest('.tabs').find("[data-tab]").removeClass('active');
         $(this).closest('.tabs').find(`[data-tab="${$(this).data('tab')}"]`).addClass('active');
     });
+
+    // ÐŸÐµÑ€ÐµÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ ÑÐ»Ð°Ð¹Ð´ÐµÑ€Ð° Ð² ÑÐµÑ€Ð²Ð¸ÑÐ°Ñ… Ð½Ð° Ð³Ð»Ð°Ð²Ð½Ð¾Ð¹
+    if($('.service_content-slider .service_card').length > 2) {
+        let timer = false;
+        const changeIndex = () => {
+            const countCard = Number($('.service_card.active').data('card')) + 1;
+            $('.service_nav-count .current_card').text(countCard < 10 ? "0" + countCard : countCard);
+        }
+        $('.service_nav-arrows .arrow-right').click(function() {
+            const exActive = $('.service_card.active').removeClass('active');
+            $('.service_card.show').first().removeClass('show').addClass('active');
+            $('.service_card.show').last().next().addClass('show');
+            $('.service_card').addClass('up');
+            changeIndex();
+            const rightTimer = setTimeout(() => {
+                $('.service_content-slider').append($(exActive).remove());
+                $('.service_card').removeClass('up');
+                clearTimeout(rightTimer);
+            }, 500);
+        });
+        $('.service_nav-arrows .arrow-left').click(function() {
+            $('.service_card.active').removeClass('active').addClass('show');
+            $('.service_card.show').last().removeClass('show');
+            const newActive = $('.service_card').last().addClass('active').remove();
+            $('.service_content-slider').prepend(newActive);
+            $('.service_card').addClass('down');
+            changeIndex();
+            const leftTimer = setTimeout(() => {
+                $('.service_card').removeClass('down');
+                clearTimeout(leftTimer);
+            }, 500);
+        });
+        $(document).on('click', '.service_card.show', function() {
+            if($(this).prev().prev()) {
+                $('.service_content-slider').append($(this).prev().prev().remove());
+            }
+            $('.service_content-slider').append($(this).prev().remove());
+            
+            $('.service_card').removeClass('active').removeClass('show');
+            $(this).removeClass('show').addClass('active').next().addClass('show').next().addClass('show');
+            changeIndex();
+        });
+    } else {
+        $('.service_nav-arrows').hide();
+    }
 });
