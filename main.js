@@ -66,46 +66,55 @@ $(document).ready(function() {
     });
 
     // Переключение слайдера в сервисах на главной
+    $('.service_content-slider .service_card').each(function(index, item) {
+        $(item).addClass('active');
+        $(item).attr('data-height', $(item).innerHeight());
+        
+        if($(item).data('card') != 1) {
+            $(item).removeClass('active');
+        } 
+        if($(item).data('card') == 2 || $(item).data('card') == 3) {
+            $(item).addClass('show');
+        }
+        $(item).css({
+            'transition': 'all 0.5s linear 0s'
+        });
+        
+    });
     if($('.service_content-slider .service_card').length > 2) {
-        let timer = false;
         const changeIndex = () => {
-            const countCard = Number($('.service_card.active').data('card')) + 1;
+            const countCard = Number($('.service_card.active').data('card')) === 0 ? $('.service_content-slider .service_card').length : Number($('.service_card.active').data('card'));
             $('.service_nav-count .current_card').text(countCard < 10 ? "0" + countCard : countCard);
         }
+        $('.service_card.active').css('max-height', $('.service_card.active').data('height'));
         $('.service_nav-arrows .arrow-right').click(function() {
-            const exActive = $('.service_card.active').removeClass('active');
+            $('.service_card.active').css('max-height', '');
+            $('.service_card.active').removeClass('active');
             $('.service_card.show').first().removeClass('show').addClass('active');
-            $('.service_card.show').last().next().addClass('show');
-            $('.service_card').addClass('up');
-            changeIndex();
-            const rightTimer = setTimeout(() => {
-                $('.service_content-slider').append($(exActive).remove());
-                $('.service_card').removeClass('up');
-                clearTimeout(rightTimer);
-            }, 500);
+            $('.service_card.show').last().next().addClass('show');                       
+            $('.service_content-slider').append($('.service_card').first());
+            changeIndex();            
+            $('.service_card.active').css('max-height', $('.service_card.active').data('height'));
         });
         $('.service_nav-arrows .arrow-left').click(function() {
+            $('.service_card.active').css('max-height', '');
             $('.service_card.active').removeClass('active').addClass('show');
             $('.service_card.show').last().removeClass('show');
-            const newActive = $('.service_card').last().addClass('active').remove();
-            $('.service_content-slider').prepend(newActive);
-            $('.service_card').addClass('down');
-            changeIndex();
-            const leftTimer = setTimeout(() => {
-                $('.service_card').removeClass('down');
-                clearTimeout(leftTimer);
-            }, 500);
+            $('.service_card').first().addClass('active');
+            $('.service_content-slider').prepend($('.service_card').last());   
+            changeIndex();            
+            $('.service_card.active').css('max-height', $('.service_card.active').data('height'));
         });
-        $(document).on('click', '.service_card.show', function() {
-            if($(this).prev().prev()) {
-                $('.service_content-slider').append($(this).prev().prev().remove());
-            }
-            $('.service_content-slider').append($(this).prev().remove());
+        // $(document).on('click', '.service_card.show', function() {
+        //     if($(this).prev().prev()) {
+        //         $('.service_content-slider').append($(this).prev().prev().remove());
+        //     }
+        //     $('.service_content-slider').append($(this).prev().remove());
             
-            $('.service_card').removeClass('active').removeClass('show');
-            $(this).removeClass('show').addClass('active').next().addClass('show').next().addClass('show');
-            changeIndex();
-        });
+        //     $('.service_card').removeClass('active').removeClass('show');
+        //     $(this).removeClass('show').addClass('active').next().addClass('show').next().addClass('show');
+        //     changeIndex();
+        // });
     } else {
         $('.service_nav-arrows').hide();
     }
