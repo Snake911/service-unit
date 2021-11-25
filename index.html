@@ -12,6 +12,10 @@
     <script src="js/jquery.min.js"></script>
     <script src="main.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=424e8338-02d6-4172-8698-59b1cd6343d4"></script>
+    <script src="https://yastatic.net/s3/mapsapi-jslibs/area/0.0.1/util.calculateArea.min.js" type="text/javascript"></script>
+    <script src="https://yastatic.net/s3/mapsapi-jslibs/polylabeler/1.0.2/polylabel.min.js" type="text/javascript"></script>
+    <script src="js/map.js"></script>
 </head>
 <body>
     <header class="index_page">
@@ -49,7 +53,7 @@
                     <li class="header_menu-drop">
                         <a href="/about/">О компании</a>
                         <ul class="header_menu-dropdown">
-                            <li><a href="/about/partners.html">Партнеры</a></li>
+                            <li><a href="/about/partners/">Партнеры</a></li>
                             <li><a href="/about/news.html">Новости</a></li>
                             <li><a href="/about/documents.html">Документы</a></li>
                         </ul>
@@ -109,7 +113,7 @@
                         <li class="heading">
                             <a href="/about/">О компании</a>
                             <ul class="header_menu-menu_dropdown">
-                                <li><a href="/about/partners.html">Партнеры</a></li>
+                                <li><a href="/about/partners/">Партнеры</a></li>
                                 <li><a href="/about/news.html">Новости</a></li>
                                 <li><a href="/about/documents.html">Документы</a></li>
                             </ul>
@@ -346,8 +350,8 @@
                         <li>Крупные стратегические партнёры для реализации проектов «под ключ»</li>
                     </ul>
                     <div class="usage_content-buttons">
-                        <a href="/usage/usage_areas.html" class="button button_green-full">Подробнее об областях</a>
-                        <a href="/usage/solutions.html" class="button button_green-full">Подробнее о решениях</a>
+                        <a href="/usage/usage_areas.html" class="button button_green-fill">Подробнее об областях</a>
+                        <a href="/usage/solutions.html" class="button button_green-fill">Подробнее о решениях</a>
                     </div>
                 </div>
             </div>
@@ -361,42 +365,56 @@
                     <ul class="service_content-slider">
                         <li class="service_card" data-card="0">
                             <a class="service_card-link" href="/service/service_jenbacher.html">Подробнее о сервисе<span class="arrow arrow_link"></span></a>
-                            <h3>Обслуживание газовых двигателей Jenbacher</h3>
-                            <div class="service_card-text">                                
-                                <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p>    
+                            <div class="service_card-text"> 
+                                <h3>Обслуживание газовых двигателей Jenbacher</h3> 
+                                <div>
+                                    <!-- Место для PREVIEW_TEXT -->
+                                    <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p>
+                                </div>  
                             </div>
                             <a class="button button_green" href="/service/service_jenbacher.html">Узнать больше</a>
                         </li>
-                        <li class="service_card" data-card="1">
+                        <li class="service_card active" data-card="1">
                             <a class="service_card-link" href="/service/service_mwm.html">Подробнее о сервисе<span class="arrow arrow_link"></span></a>
-                            <h3>Обслуживание газовых двигателей MWM</h3>
-                            <div class="service_card-text">                                
-                                <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p>    
+                            <div class="service_card-text"> 
+                                <h3>Обслуживание газовых двигателей MWM</h3>                              
+                                <div>
+                                    <!-- Место для PREVIEW_TEXT -->                                    
+                                    <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p>                                    
+                                </div>
                             </div>
                             <a class="button button_green" href="/service/service_mwm.html">Узнать больше</a>
                         </li>
-                        <li class="service_card" data-card="2">
+                        <li class="service_card show" data-card="2">
                             <a class="service_card-link" href="/service/repair_parts.html">Подробнее о сервисе<span class="arrow arrow_link"></span></a>
-                            <h3>Запасные части</h3>
-                            <div class="service_card-text">                                
-                                <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p>    
+                            <div class="service_card-text">
+                                <h3>Запасные части</h3>                            
+                                <div>
+                                    <!-- Место для PREVIEW_TEXT -->
+                                    <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p>
+                                </div>
                             </div>
                             <a class="button button_green" href="/service/repair_parts.html">Узнать больше</a>
                         </li>
-                        <li class="service_card" data-card="3">
+                        <li class="service_card show" data-card="3">
                             <a class="service_card-link" href="/service/service_jenbacher.html">Подробнее о сервисе<span class="arrow arrow_link"></span></a>
-                            <h3>Обслуживание газовых двигателей Jenbacher</h3>
-                            <div class="service_card-text">                                
-                                <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p>    
-                                <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p>    
+                            <div class="service_card-text">
+                                <h3>Обслуживание газовых двигателей Jenbacher</h3>                               
+                                <div>
+                                    <!-- Место для PREVIEW_TEXT -->
+                                    <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p>
+                                </div>
                             </div>
                             <a class="button button_green" href="/service/service_jenbacher.html">Узнать больше</a>
                         </li>
                         <li class="service_card" data-card="4">
                             <a class="service_card-link" href="/service/repair_parts.html">Подробнее о сервисе<span class="arrow arrow_link"></span></a>
-                            <h3>Запасные части </h3>
-                            <div class="service_card-text">                                
-                                <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p>    
+                            <div class="service_card-text">
+                                <h3>Запасные части</h3>                               
+                                <div>
+                                    <!-- Место для PREVIEW_TEXT -->
+                                    <p>С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.</p> 
+                                </div>
                             </div>
                             <a class="button button_green" href="/service/repair_parts.html">Узнать больше</a>
                         </li>
@@ -421,8 +439,163 @@
                 </div>
             </div>
         </section>
-        <section></section>
+        <section class="partners wrapper">
+                <div class="caption">
+                    <h2>Партнеры</h2>
+                    <a href="/about/partners/">Все партнеры<span class="arrow"></span></a>
+                </div>
+                <div class="partners_content ">
+                    <div class="partners_slider owl-carousel owl-theme">
+                        <div class="partners_slide">
+                            <div>
+                                <img src="images/partner_logo_1.png" height="70" class="partner_logo">                            
+                                <h3>ГК РОСТ</h3>
+                                <div class="partners_slide-text">
+                                    Группа компаний «РОСТ» - лидер рынка овощей защищенного грунта в России. Объединяет управляющую компанию - торговый дом, 12 тепличных комплексов и 5 инновационных логистических центров. В Московской области расположен крупнейший логистический центр в мире. Его площадь - 19 000 кв.м. и мощность - 500 тонн в сутки. Численность сотрудников холдинга - более 6 000 человек. До конца 2021 года площадь тепличных комбинатов составит 400 га. 
+                                </div>
+                            </div>
+                            <a href="/about/partners/detail.html" class="button button_green">Узнать больше</a>
+                        </div>
+                        <div class="partners_slide">
+                            <div>
+                                <img src="images/partner_logo_2.png" height="70" class="partner_logo">                            
+                                <h3>ГК ФИТО</h3>
+                                <div class="partners_slide-text">
+                                    ФИТО не просто выполняет функции Генерального подряда, а комплексно управляет ходом строительных работ по проекту, что обеспечивает высокое качество работ и их своевременное исполнение. Компания высокими темпами успешно расширяет масштабы своей деятельности. Одним из главных принципов развития компании является постоянное совершенствование наших внутренних рабочих процессов и освоение новых технологий.
+                                </div>
+                            </div>                            
+                            <a href="/about/partners/detail.html" class="button button_green">Узнать больше</a>
+                        </div>
+                        <div class="partners_slide">
+                            <div>
+                                <img src="images/partner_logo_3.png" height="70" class="partner_logo">                            
+                                <h3>Jenbacher</h3>
+                                <div class="partners_slide-text">
+                                    С мощностью в диапазоне от 200 кВт до 10 МВт, газовые двигатели Jenbacher дают вам гибкость при выборе топлива. Они снабжают электроэнергией, теплом и холодом различные коммерческие, производственные и муниципальные объекты, включая возобновляемую энергию и энергию из отходов, промышленную энергетику и когенерацию, а также производство электроэнергии на месторождениях. Газовые двигатели INNIO были поставлены более чем в 100 стран.
+                                </div>
+                            </div>
+                            <a href="/about/partners/detail.html" class="button button_green">Узнать больше</a>
+                        </div>
+                        <div class="partners_slide">
+                            <div>
+                                <img src="images/partner_logo_4.png" height="70" class="partner_logo">                            
+                                <h3>F-Energy OÜ</h3>
+                                <div class="partners_slide-text">
+                                    Эстонская инжиниринговая компания, которая занимается проектированием энергоцентров, котельных и мини-ТЭС, а также поставкой необходимого энергетического и теплового оборудования. Основным оборудованием для поставок являются КГПУ котлы, горелки, дымовые трубы, сухие охладители, промышленные вентиляторы, инженерные системы и средства автоматизации технологических процессов. ленточные, винтовые, цепные конвейеры для автоматизации производственных и логистических линий на промышленном производстве.
+                                </div>
+                            </div>
+                            <a href="/about/partners/detail.html" class="button button_green">Узнать больше</a>
+                        </div>
+                    </div>
+                    <div class="partners_slider-nav"></div>
+                </div>
+        </section>
+        <section class="projects wrapper">
+            <div class="caption">
+                <h2>Проекты</h2>
+                <a href="/projects/">Все проекты<span class="arrow"></span></a>
+            </div>
+            <div class="projects_content" id="projects_map"></div>
+        </section>
+        <section class="question wrapper">
+            <div class="caption">
+                <h2>Остались вопросы?</h2>
+            </div>
+            <div class="question_content">
+                <div class="question_left">
+                    <p>Заполните форму и получите бесплатную консультацию!</p>    
+                    <form>
+                        <div class="form_row">
+                            <input type="text" placeholder="Имя">
+                            <input type="text" placeholder="*+7 (___) ___-__-__">
+                        </div>
+                        <div class="form_row"><textarea placeholder="Вопрос"></textarea></div>
+                        <div class="form_row">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span>Я даю согласие на обработку персональных данных</span>
+                            </label>
+                            <button class="button" type="submit">Получить консультацию</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="question_right">
+                    <img class="question_img" src='images/question_back.png'/>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="wrapper">
+            <div class="footer_top">
+                <div class="footer_top-column">
+                    <img class="logo_footer" src="images/logo_footer.svg" width="100" height="130">
+                    <img class="logo_jenbacher_footer" src="images/logo_jenbacher_footer.svg" width="230" height="75">
+                </div>
+                <div class="footer_top-column column_menu">
+                    <div class="footer_drop-menu heading">
+                        <a href="/about/">О компании</a>
+                        <ul class="footer_menu-menu_dropdown">
+                            <li><a href="/about/partners/">Партнеры</a></li>
+                            <li><a href="/about/news.html">Новости</a></li>
+                            <li><a href="/about/documents.html">Документы</a></li>
+                        </ul>                      
+                    </div>
+                    <div class="footer_drop-menu heading">
+                        <a href="/usage/">Применение</a>
+                        <ul class="footer_menu-menu_dropdown">
+                            <li><a href="/usage/usage_areas.html">Области применения</a></li>
+                            <li><a href="/usage/solutions.html">Решения</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_top-column column_menu">
+                    <div class="footer_drop-menu heading">
+                        <a href="/service/">Сервис</a>
+                        <ul class="footer_menu-menu_dropdown">
+                            <li><a href="/service/service_jenbacher.html">Обслуживание газовых двигателей Jenbacher</a></li>
+                            <li><a href="/service/service_mwm.html">Обслуживание газовых двигателей MWM</a></li>
+                            <li><a href="/service/service_mtu.html">Обслуживание газовых двигателей MTU</a></li>
+                            <li><a href="/service/repair_parts.html">Запасные части</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_top-column column_menu">
+                    <div class="footer_drop-menu heading">
+                        <a href="/products/">Продукция</a>
+                        <ul class="footer_menu-menu_dropdown">
+                            <li><a href="/products/products_jenbacher.html">Газовые двигатели Jenbacher</a></li>
+                            <li><a href="/products/associated_equipment.html">Вспомогательное оборудование</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_top-column">
+                    <div class="footer_drop-menu"><a href="/projects/">Проекты</a></div>
+                    <div class="footer_drop-menu"><a href="/contacts/">Контакты</a></div>
+                    <div class="footer_contacts">
+                        <div class="phone">
+                            <img src="images/phone.svg" width="20" height="20">
+                            <a href="tel:8 (499) 389-43-40">8 (499) 389-43-40</a>
+                        </div>
+                        <div class="email">
+                            <img src="images/email.svg" width="20" height="20">
+                            <a href="mailto:info@servunit.ru">info@servunit.ru</a>
+                        </div>
+                        <div class="social">
+                            <a href="#" class="soc_icon twitter_icon"></a>
+                            <a href="#" class="soc_icon linkedin_icon"></a>
+                            <a href="#" class="soc_icon youtube_icon"></a>
+                            <a href="#" class="soc_icon facebook_icon"></a>
+                            <a href="#" class="soc_icon instagram_icon"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <a href="#">Политика конфиденциальности</a>
+                <div>Все права защищены. © 2021 ООО «Service Unit»</div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

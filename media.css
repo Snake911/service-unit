@@ -65,6 +65,39 @@
     .usage_content-buttons {
         font-size: 14px;
     }
+
+    .partners_slider-nav {
+        max-width: 1300px;
+    }
+
+    .partners::before {
+        left: -30%;
+    }
+
+    .partners::after {
+        right: -30%;
+    }
+
+    .question_content form {
+        row-gap: 20px;
+    }
+
+    .form_row {
+        column-gap: 20px;
+    }
+
+    .question_left {
+        max-width: 740px;
+        margin-bottom: 15px;
+    }
+
+    .question_right {
+        max-width: 486px;
+    }
+
+    .question_right img {
+        top: -15px;
+    }
 }
 
 @media (max-width: 1400px) {
@@ -76,12 +109,64 @@
 
     .caption a {
         font-size: 14px;
-    }    
+    }
+
+    .service_content-slider {
+        height: 495px;
+    }
+
+    .service_card.active {
+        height: 380px;
+        margin-bottom: 30px;
+    }
+
+    .service_card.show {
+        margin-bottom: 30px;
+    }
+
+    .service_card h3 {
+        font-size: 20px;
+    }
+
+    .service_card-text {
+        height: 160px;
+    }
+
+    .service_card-text > div {
+        font-size: 14px;
+    }
+
+    .service_advantages li {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 1200px) {
     .advantages_slider {
         max-width: 900px;
+    }
+
+    .service_content {
+        flex-direction: column;
+        row-gap: 30px;
+        margin-top: 30px;
+    }
+
+    .service_content-left {
+        max-width: 100%;
+    }
+
+    .service_background {
+        display: none;
+    }
+
+    .question_left {
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+
+    .question_right {
+        display: none;
     }
 }
 
@@ -96,6 +181,25 @@
 
     .tab_buttons {
         margin-top: 30px;
+    }
+
+    .heading {
+        position: relative;
+    }
+    
+    .heading::after {
+        content: url('images/plus.svg');
+        display: block;
+        height: 25px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    .heading.active::after {
+        content: url('images/minus.svg');
+        display: block;
+        height: 25px;
     }
 
     .header_container {
@@ -240,6 +344,57 @@
     .advantages_nav {        
         z-index: 1;
     }
+
+    .footer_top {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .footer_top-column {
+        row-gap: 20px;
+        max-width: 100%;
+    }
+
+    .footer_top-column:first-child {
+        align-items: center;
+        border-bottom: 1px solid #30454E;
+        padding-bottom: 20px;
+        margin-bottom: 5px;
+    }
+
+    .footer_menu-menu_dropdown {
+        margin-top: 0px;
+        max-height: 0px;
+        height: auto;
+        overflow: hidden;
+        transition: all .5s ease-in-out;
+    }
+
+    .heading.active .footer_menu-menu_dropdown {
+        margin-top: 10px;
+        max-height: 500px;
+    }
+
+    .footer_contacts {
+        padding-top: 30px;
+        margin-top: 10px;
+        border-top: 1px solid #30454E;
+        justify-content: center;
+    }
+
+    .footer_top .phone, 
+    .footer_top .email,
+    .footer_top .social {
+        align-self: center;
+    }
+
+    .footer_bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        row-gap: 20px;
+    }
+    
 }
 
 @media (max-width: 690px) {
@@ -316,6 +471,10 @@
         max-width: 380px;
     }
 
+    .tab_buttons button {
+        width: 100%;
+    }
+
     .product_table {
         padding: 30px 10px;
     }
@@ -365,6 +524,89 @@
         grid-template-columns: 100%;
         justify-items: center;
         row-gap: 20px;
+    }
+
+    .service_content-slider {
+        height: 580px;
+    }
+
+    .service_card.show {
+        padding: 0 10px;
+    }
+
+    .service_card.active {
+        padding: 20px 10px 30px;
+        height: 450px;
+    }
+
+    .service_card.active::before {
+        min-width: 170px;
+    }
+
+    .service_card-link {
+        justify-content: flex-start;
+        margin-bottom: 30px;
+    }
+
+    .service_card-text {
+        height: 280px;
+    }
+
+    .service_content-nav {
+        padding: 0;
+    }
+
+    .service_advantages {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .service_advantages li {
+        max-width: 100%;
+        height: 60px;
+    }
+
+    .partners_slide {
+        padding: 30px 10px;
+    }
+
+    .partners_slider-nav {
+        top: -20px;
+    }
+
+    .projects_content {
+        height: 400px;
+    }
+
+    .question_content form {
+        row-gap: 10px;
+    }
+
+    .form_row {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .question_content .button {
+        margin: auto;
+    }
+
+    .logo_footer {
+        width: 75px;
+        height: 100px;
+    }
+
+    .logo_jenbacher_footer {
+        width: 120px;
+        height: 40px;
+    }
+
+    .footer_drop-menu {
+        font-size: 14px;
+    }
+
+    .footer_drop-menu > a {
+        font-size: 18px;
     }
 }
 
